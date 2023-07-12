@@ -79,8 +79,8 @@
 				  layer.bindPopup(`Year : ${selectedYearText.slice(1)} <br>
 				  Country : ${feature.properties["CNTRY_NAME"]} <br>
 			  rank: ${feature.properties[rankText]}<br>
-				  Happyness Index : ${feature.properties[selectedYearText]}`);
-				  //layer.bindTooltip (`${feature.properties[rankText]}` , {permanent: true, direction: "center", className: 'leaflet-tooltip-own'});
+				  Happiness Index : ${feature.properties[selectedYearText]}`);
+				  layer.bindTooltip (`${feature.properties["CNTRY_NAME"]}` , {permanent: false, direction: "center", className: 'leaflet-tooltip-own'});
 			  },
 			  style: style //Apply the style function to each feature
 		  }).addTo(map);

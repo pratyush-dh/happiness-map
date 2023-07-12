@@ -1,0 +1,142 @@
+<head>
+	<title>World Happiness Index Dynamic Map</title>
+    <!-- Load the leaflet library from a CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.2/chroma.min.js"></script>
+    <!-- Set the style of the map container -->
+    <style>
+		#map {
+			height: 80vmin;
+			width: 80vw;
+		}
+
+
+		#slider-container {
+			display: flex; 
+			align-items: center; 
+			justify-content: space-between;
+			width: 60vw;
+			margin: 10px auto;
+		}
+		
+		#title-container{
+			display; block;
+			text-align: center;
+			margin: 0 auto;
+			font-size: 2em; z-index: 9999";
+		}
+
+		#timeSlider {
+			width: 70%;
+			height: 20px;
+		}
+
+		/* Set the style of the play/pause button */
+		#playPauseButton {
+			width: 100px;
+			height: 40px;
+			border: none;
+			border-radius: 10px;
+			background-color: #4CAF50;
+			color: white;
+			font-size: 16px;
+		}
+		
+		.leaflet-tooltip-own {
+		  padding: 0px;
+		  margin: 0px;
+		  border: 0px;
+		  background:none;
+		  background-color: white;
+		  color: black;
+		  font-size: 1.5em;
+		}
+
+		.leaflet-tooltip-top:before,
+		.leaflet-tooltip-bottom:before,
+		.leaflet-tooltip-left:before,
+		.leaflet-tooltip-right:before {
+		  border: 0px;
+		}
+		
+
+		.box {
+		  
+		  width: 10%;
+		  height: 50px;
+		  display: inline-block;
+		}
+		.box1 {
+		  background-color: green;
+		  width: 10%;
+		  height: 50px;
+		  display: inline-block;
+		}
+		.box2 {
+		  background-color: olive;
+		  width: 10%;
+		  height: 50px;
+		  display: inline-block;
+		}
+		.box3 {
+		  background-color: yellow;
+		  width: 10%;
+		  height: 50px;
+		  display: inline-block;
+		}
+		.box4 {
+		  background-color: orange;
+		  width: 10%;
+		  height: 50px;
+		  display: inline-block;
+		}
+		.box5 {
+		  background-color: red;
+		  width: 10%;
+		  height: 50px;
+		  display: inline-block;
+		}
+		.box6 {
+		  background-color: brown;
+		  width: 10%;
+		  height: 50px;
+		  display: inline-block;
+		}
+		</style>
+</head>
+<body>
+	<div><h1>World Happiness Index throughout the Years</h1></div>
+	<div id="slider-container">
+	  <span id="min">2014</span> <!-- Show the minimum value -->
+	  <input type="range" id="timeSlider" min="2014" max="2022" step="1" value = "2020">
+	  <span id="max">2022</span> <!-- Show the maximum value -->
+	  <button id="playPauseButton">Play</button>
+	   <!-- Show the current value -->
+	</div>
+	<div id = "title-container"></div>
+	
+    <!-- Create a div element to hold the map -->
+    <div style = "display: relative;" id="map"></div>
+	
+    <!-- Load the javascript code from a separate file -->
+  <script src="simpleWebMap.js"></script>
+	
+	<div style="text-align:left">
+	<div class="box">Less Happy</div>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+	<div class="box6"></div>
+	<div class="box">More Happy</div>
+	</div>
+
+	<div style = "padding-top: 10px; vertical-align: bottom;">Connect with me on: 
+	<a href = "https://www.linkedin.com/in/pratyush-dhungana-243129175/" target = "blank">
+	<img src = "https://cdn-icons-png.flaticon.com/512/174/174857.png" alt = "Linkedin" width = "20" height = "20" style = "vertical-align: bottom;"></a>
+	<a href = "https://github.com/pratyush-dh" target = "blank">
+	<img src = "https://cdn-icons-png.flaticon.com/512/25/25231.png" alt = "GitHub" width = "20" height = "20" style = "vertical-align: bottom;"></a>
+	</div>
+</body>
